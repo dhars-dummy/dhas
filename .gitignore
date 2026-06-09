@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+out/
+.cache/
+public/build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+
+# Generated CSS maps
+*.css.map
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.pdf

@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--animation-duration: 0.3s;
+		--animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #ffffff 100%);
+		font-family: "Mulish", sans-serif;
+		background-attachment: fixed;
+		cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.syringe-needle{fill:%23000;}.syringe-barrel{stroke:%23000;stroke-width:1.5;fill:none;}.syringe-plunger{fill:%23000;opacity:0.7;}</style></defs><path class="syringe-needle" d="M8 2 L6 8 L8 6 L10 8 Z"/><rect class="syringe-barrel" x="8" y="5" width="3" height="14" rx="1.5"/><circle class="syringe-plunger" cx="13" cy="8" r="2"/></svg>') 8 2, auto;
+	}
+
+	a, button {
+		cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.syringe-needle{fill:%23000;}.syringe-barrel{stroke:%23000;stroke-width:1.5;fill:none;}.syringe-plunger{fill:%23000;opacity:0.9;}</style></defs><path class="syringe-needle" d="M8 2 L6 8 L8 6 L10 8 Z"/><rect class="syringe-barrel" x="8" y="5" width="3" height="14" rx="1.5"/><circle class="syringe-plunger" cx="13" cy="8" r="2.2"/></svg>') 8 2, pointer;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-bold tracking-tight;
+	}
+
+	::selection {
+		@apply bg-black text-white;
+	}
+}
+
+@layer components {
+	.portfolio-card {
+		@apply border border-gray-300 bg-white p-6 transition-all duration-300 hover:border-black hover:shadow-lg;
+	}
+
+	.portfolio-label {
+		@apply text-xs font-bold uppercase tracking-[0.4em] text-gray-500;
+	}
+
+	.portfolio-divider {
+		@apply h-px bg-gradient-to-r from-black via-black to-transparent;
+	}
+
+	.scroll-reveal {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	}
+
+	.scroll-reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.fade-in {
+		animation: fadeIn 0.6s ease-in;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.slide-in-left {
+		animation: slideInLeft 0.6s ease-out;
+	}
+
+	@keyframes slideInLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.scale-up {
+		animation: scaleUp 0.5s ease-out;
+	}
+
+	@keyframes scaleUp {
+		from {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.parallax {
+		transition: transform 0.3s ease-out;
+	}
+}
