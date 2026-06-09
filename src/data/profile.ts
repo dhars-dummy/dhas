@@ -1,4 +1,32 @@
-export const profile = {
+export interface Profile {
+  name: string;
+  title: string;
+  summary: string;
+  contact: { phone: string; email: string; website: string };
+  location: string;
+  skills: string[];
+  languages: string[];
+  education: Array<{
+    degree: string;
+    institute: string;
+    period: string;
+    score: string;
+    description: string;
+  }>;
+  internships: Array<{
+    role: string;
+    company: string;
+    period: string;
+    description: string;
+  }>;
+  projects: Array<{
+    title: string;
+    type: string;
+    description: string;
+  }>;
+}
+
+export const profile: Profile = {
   name: "Dharshini S",
   title: "B. Pharm Graduate",
   summary:
